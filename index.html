@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="signup.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("form").addEventListener("submit", function(event) {
+                event.preventDefault();
+    
+                let fullname = document.querySelector("input[name='fullname']").value;
+                let email = document.querySelector("input[name='email']").value;
+                let password = document.querySelector("input[name='password']").value;
+                let confirmPassword = document.querySelector("input[name='confirm-password']").value;
+    
+                // Kiểm tra mật khẩu có ít nhất 8 ký tự và chứa ít nhất một chữ cái viết hoa
+                let passwordRegex = /^(?=.*[A-Z]).{8,}$/;
+                if (!passwordRegex.test(password)) {
+                    alert("Mật khẩu phải có ít nhất 8 ký tự và ít nhất một chữ cái viết hoa!");
+                    return;
+                }
+    
+                if (password !== confirmPassword) {
+                    alert("Mật khẩu không khớp!");
+                    return;
+                }
+    
+                // Lấy danh sách tài khoản đã đăng ký từ localStorage
+                let users = JSON.parse(localStorage.getItem("users")) || [];
+    
+                // Kiểm tra xem email đã được sử dụng chưa
+                let existingUser = users.find(user => user.email === email);
+                if (existingUser) {
+                    alert("Email đã được sử dụng! Vui lòng chọn email khác.");
+                    return;
+                }
+    
+                // Thêm người dùng mới vào danh sách
+                users.push({ fullname, email, password });
+                localStorage.setItem("users", JSON.stringify(users));
+    
+                alert("Đăng ký thành công! Vui lòng đăng nhập.");
+                window.location.href = "login.html"; // Chuyển đến trang đăng nhập
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="/img/LOGO.png" alt="Avatar" class="avatar">
+        <h2>SIGN UP</h2>
+        <form>
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">SIGN UP</button>
+        </form>
+        <p class="login-link">ALREADY HAVE AN ACCOUNT? <a href="login.html">LOGIN</a></p>
+    </div>
+</body>
+</html>

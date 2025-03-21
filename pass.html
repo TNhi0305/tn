@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quên Mật Khẩu</title>
+    <link rel="stylesheet" href="pass.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Quên Mật Khẩu</h2>
+        <div id="step1">
+            <input type="email" id="email" placeholder="Nhập email của bạn">
+            <button class="send-link" onclick="sendResetLink()">Gửi liên kết</button>
+        </div>
+        <div id="step2" class="hidden">
+            <p>Nhập mật khẩu mới:</p>
+            <input type="password" id="newPassword" placeholder="Nhập mật khẩu mới">
+            <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu mới">
+            <button onclick="resetPassword()">Đặt lại mật khẩu</button>
+        </div>
+    </div>
+    <script>
+        function sendResetLink() {
+            let email = document.getElementById('email').value;
+            if (email) {
+                alert('Liên kết đặt lại mật khẩu đã được gửi đến ' + email);
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+            } else {
+                alert('Vui lòng nhập email hợp lệ!');
+            }
+        }
+        function resetPassword() {
+            let newPassword = document.getElementById('newPassword').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+            if (newPassword && confirmPassword) {
+                if (newPassword === confirmPassword) {
+                    alert('Mật khẩu của bạn đã được đặt lại thành công!');
+                    window.location.href = 'login.html'; // Chuyển đến trang đăng nhập
+                } else {
+                    alert('Mật khẩu không khớp! Vui lòng nhập lại.');
+                }
+            } else {
+                alert('Vui lòng nhập đầy đủ mật khẩu!');
+            }
+        }
+    </script>
+</body>
+</html>

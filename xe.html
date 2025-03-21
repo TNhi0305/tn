@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuê Xe Chất Lượng Cao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="xe.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            let navLinks = document.querySelectorAll("nav ul li a");
+            
+            function showSection(id) {
+                sections.forEach(section => section.classList.remove("active"));
+                document.querySelector(id).classList.add("active");
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    let targetId = this.getAttribute("href");
+                    if (targetId.startsWith("#")) {
+                        showSection(targetId);
+                    }
+                });
+            });
+            
+            showSection("#home");
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="texth1">DỊCH VỤ CHO THUÊ XE DU LỊCH</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="active">
+        <img class="img" src="img/nen.png" alt="demo">  
+        <h2>Chào mừng bạn đến với dịch vụ thuê xe của chúng tôi!</h2>
+        <p>Chúng tôi cung cấp nhiều loại xe với giá cả hợp lý.</p>
+        <p>Dịch vụ của chúng tôi cam kết mang đến sự tiện lợi, an toàn và chất lượng cao nhất cho khách hàng. Với nhiều năm kinh nghiệm trong lĩnh vực cho thuê xe, chúng tôi sở hữu đội xe đa dạng từ xe 4 chỗ, 7 chỗ đến các dòng xe cao cấp phục vụ nhu cầu di chuyển cá nhân, gia đình hay doanh nghiệp.</p>
+        <p>Chúng tôi cung cấp dịch vụ hỗ trợ khách hàng 24/7, giúp bạn dễ dàng đặt xe và có trải nghiệm tuyệt vời. Bên cạnh đó, các tài xế chuyên nghiệp và dịch vụ bảo dưỡng định kỳ giúp đảm bảo mọi chuyến đi đều suôn sẻ và an toàn.</p>
+        <p>Hãy liên hệ ngay với chúng tôi để có những trải nghiệm thuê xe tuyệt vời nhất!</p>
+    </section>
+
+    <section id="services">
+        <h2>Dịch Vụ Thuê Xe</h2>
+        <div class="car">
+            <img src="car1.jpg" alt="Xe 4 chỗ">
+            <h3>Xe 4 chỗ</h3>
+            <p>Giá: 500.000đ/ngày</p>
+        </div>
+        <div class="car">
+            <img src="car2.jpg" alt="Xe 7 chỗ">
+            <h3>Xe 7 chỗ</h3>
+            <p>Giá: 800.000đ/ngày</p>
+        </div>
+        <h3>Đặt xe ngay</h3>
+        <form>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="car">Chọn xe:</label>
+            <select id="car" name="car">
+                <option value="4cho">Xe 4 chỗ</option>
+                <option value="7cho">Xe 7 chỗ</option>
+            </select><br><br>
+            <label for="service-type">Loại dịch vụ:</label>
+            <select id="service-type" name="service-type">
+                <option value="tu-lai">Xe tự lái</option>
+                <option value="co-tai-xe">Có tài xế</option>
+            </select><br><br>
+            <label for="date-start">Ngày thuê:</label>
+            <input type="date" id="date-start" name="date-start" required><br><br>
+            <label for="date-end">Ngày trả:</label>
+            <input type="date" id="date-end" name="date-end" required><br><br>
+            <button type="submit">Thuê Xe</button>
+        </form>
+    </section>
+    
+    <section id="contact">
+        <h2>Liên Hệ</h2>
+        <p>Chủ xe: Đặng Văn Lý</p>
+        <p>Số điện thoại: 123456789</p>
+        <p>Email: thuexe@example.com</p>
+        <p>Fanpage: <a href="https://www.facebook.com/thuexe" target="_blank">Facebook Thuê Xe</a></p>
+    </section>
+    
+    <footer class="footer">
+        <p><i class="fa-solid fa-car-side"></i> DỊCH VỤ CHO THUÊ XE DU LỊCH </p>
+    </footer>
+</body>
+</html>

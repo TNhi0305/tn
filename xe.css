@@ -1,0 +1,55 @@
+nav {
+    width: 100%;
+    background-color: rgb(86, 76, 63);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+}
+nav ul li {
+    flex-grow: 1;
+    text-align: center;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-size: 20px;
+}
+
+section {
+    display: none;
+    padding: 20px;
+}
+section.active {
+    display: block;
+    font-size: 25px;
+}
+.texth1{
+    text-align: center;
+}
+footer {
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+}
+.img {
+    width: 100%;
+    display: block;
+}
+
+#services .img, #contact .img {
+    display: none; /* Ẩn ảnh trong các section khác */
+}

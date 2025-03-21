@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/br.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(12px);
+}
+.container {
+    background-image: url('img/5a2ed46c5e2650bc27cd9d9a943111ef.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    text-shadow: 3px 2px 1px white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 15px 3px rgba(77, 76, 76, 0.2);
+    width: 450px;
+    text-align: center;
+    position: relative;
+    border: 2px solid white;
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+button.send-link {
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button.send-link:hover {
+    background-color: darkblue;
+}
+.hidden { 
+    display: none; 
+}
